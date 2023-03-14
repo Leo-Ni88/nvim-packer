@@ -5,8 +5,8 @@ end
 
 local protocol = require("vim.lsp.protocol")
 
+-- format on save
 local on_attach = function(client, bufnr)
-	-- format on save
 	if client.server_capabilities.documentFormattingProvider then
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			group = vim.api.nvim_create_augroup("Format", { clear = true }),
@@ -24,12 +24,12 @@ capabilities.offsetEncoding = { "utf-16" }
 -- Python
 nvim_lsp.pyright.setup({
 	on_attach = on_attach,
-    capabilities = capabilities,
+	capabilities = capabilities,
 })
 
 -- Clangd
 nvim_lsp.clangd.setup({
-	on_attach = on_attach,
-    capabilities = capabilities,
-    cmd = { 'clangd', '--log=verbose' },
+	--on_attach = on_attach,
+	capabilities = capabilities,
+	cmd = { "clangd", "--log=verbose" },
 })

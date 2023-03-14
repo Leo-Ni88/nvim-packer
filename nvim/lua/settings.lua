@@ -34,7 +34,7 @@ o.mouse = "a"
 --o.updatetime = 10
 --o.nofsync = true
 o.undofile = true
-o.undodir = "~/.vim/undodir"
+--o.undodir = "~/.vim/undodir"
 o.syntax = "on"
 o.encoding = "UTF-8"
 o.ruler = true
@@ -56,7 +56,7 @@ vim.cmd([[
         autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
     endif
 
-    autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
-    autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
-    autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+    " autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
+    " autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
+    " autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
 ]])

@@ -74,7 +74,7 @@ packer.startup({
 	    	end,
 	    })
 
-	    -- Mason: Portable package manager
+	    -- Mason: Portable lsp server package manager
 	    use({
 	    	"williamboman/mason.nvim",
 	    	config = function()
@@ -232,6 +232,7 @@ packer.startup({
         use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
 
         -- LSP diagnostics, code actions, and more via Lua.
+        --[[
 	    use({
 	    	"jose-elias-alvarez/null-ls.nvim",
 	    	config = function()
@@ -239,6 +240,7 @@ packer.startup({
 	    	end,
 	    	requires = { "nvim-lua/plenary.nvim" },
 	    })
+        --]]
 
         -- Automatically set up your configuration after cloning packer.nvim
         if packer_bootstrap then
