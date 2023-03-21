@@ -20,7 +20,7 @@ nls.setup({
 		}),
 		fmt.stylua,
 		fmt.rustfmt,
-		fmt.uncrustify.with({ filetypes = { "c" } }),
+		-- fmt.uncrustify.with({ filetypes = { "c" } }),
 
 		-- Diagnostics
 		dgn.eslint_d,

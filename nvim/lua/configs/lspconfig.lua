@@ -1,4 +1,4 @@
-local status, nvim_lsp = pcall(require, "lspconfig")
+local status, lspconfig = pcall(require, "lspconfig")
 if not status then
 	return
 end
@@ -22,14 +22,20 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 capabilities.offsetEncoding = { "utf-16" }
 
 -- Python
-nvim_lsp.pyright.setup({
+lspconfig.pyright.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
 -- Clangd
-nvim_lsp.clangd.setup({
-	--on_attach = on_attach,
+lspconfig.clangd.setup({
+	-- on_attach = on_attach,
 	capabilities = capabilities,
 	cmd = { "clangd", "--log=verbose" },
+})
+
+-- lua_ls
+lspconfig.lua_ls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
 })

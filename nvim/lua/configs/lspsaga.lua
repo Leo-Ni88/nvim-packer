@@ -3,4 +3,13 @@ if not status then
 	return
 end
 
-lspsaga.setup()
+lspsaga.setup({
+	lightbulb = {
+		enable = false,
+	},
+	outline = {
+		keys = {
+			expand_or_jump = "<CR>",
+		},
+	},
+})

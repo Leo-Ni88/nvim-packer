@@ -9,5 +9,6 @@ masonlsp.setup({
 	ensure_installed = {
 		"clangd",
 		"pyright",
+		"lua_ls",
 	},
 })
