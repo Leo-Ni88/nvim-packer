@@ -50,7 +50,7 @@ packer.startup({
 			config = function()
 				require("configs.lualine")
 			end,
-			requires = { "nvim-web-devicons" },
+			requires = { "nvim-tree/nvim-web-devicons", opt = true },
 		})
 
 		-- Bufferline
@@ -150,25 +150,12 @@ packer.startup({
 
 		-- Neo-tree: File manager
 		use({
-			"nvim-neo-tree/neo-tree.nvim",
-			branch = "v2.x",
+			"nvim-tree/nvim-tree.lua",
 			requires = {
-				"nvim-lua/plenary.nvim",
-				"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-				"MunifTanjim/nui.nvim",
+				"nvim-tree/nvim-web-devicons", -- optional
 			},
 			config = function()
-				require("neo-tree").setup({
-					close_if_last_window = true,
-					enable_git_status = false,
-					enable_diagnostics = false,
-					filesystem = {
-						follow_current_file = true,
-					},
-					buffers = {
-						follow_current_file = true,
-					},
-				})
+				require("configs.nvim-tree")
 			end,
 		})
 
