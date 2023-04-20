@@ -195,6 +195,13 @@ packer.startup({
 		-- myword
 		use({ "dwrdx/mywords.nvim" })
 
+		use({
+			"nvim-pack/nvim-spectre",
+			config = function()
+				require("configs.spectre")
+			end,
+		})
+
 		-- telescope
 		use({
 			"nvim-telescope/telescope.nvim",
